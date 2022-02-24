@@ -1,0 +1,60 @@
+.navtext{
+    color:white;
+}
+
+.gameslist{
+    color:white;
+}
+
+#footercontainer{
+    text-align:center;
+}
+
+body{
+    background:#81aef7;
+    background-image:url("websitebackgroundimage.jpg");
+    background-size:1600px 1200px;
+    background-repeat:no-repeat;
+}
+
+#game{
+    background-image:url("gamebackgroundimageupdate.jpg");
+    background-size:1600px 2000px;
+}
+
+.gametext{
+    color:white;
+}
+
+#buygames{
+    background-image:url("buygamebackgroundimage.jpg");
+    color:white;
+}
+
+#buygamestable{
+    text-align:center;
+    margin-left:600px;
+}
+
+#buygamescustomerinformation{
+    text-align:center;
+    margin-left:80px;
+}
+
+#order{
+    background-image:url("orderbackgroundimage.jpg");
+    text-align:center;
+    background-size:auto;
+    background-repeat:no-repeat;
+}
+
+.ordertext{
+    color:white;
+}
+
+.ordercontainer{
+    margin:auto;
+    margin-top:300px;
+    width:50%;
+    padding:10px;
+}
