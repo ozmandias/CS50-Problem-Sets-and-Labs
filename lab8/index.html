@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function checkanswer(){
+                let incorrectbuttons = document.querySelectorAll(".incorrect");
+                let correctbutton = document.querySelector(".correct");
+                let multiplechoicetext = document.querySelector("#multiplechoicetext");
+                let checkanswerbutton = document.querySelector("#checkbutton");
+                let textanswer = document.querySelector("#freeresponseanswer");
+                let freeresponsetext = document.querySelector("#freeresponsetext");
+
+                freeresponseanswer.value = "";
+
+                for(let i=0;i<incorrectbuttons.length;i=i+1){
+                    //console.log("i:"+i);
+                    incorrectbuttons[i].addEventListener("click", function(){
+                        //console.log("incorrect");
+                        multiplechoicetext.innerHTML = "Incorrect";
+                        incorrectbuttons[i].style.background = "red";
+                        incorrectbuttons[i].style.color = "white";
+                    });
+                }
+                correctbutton.addEventListener("click",function(){
+                    //console.log("correct");
+                    multiplechoicetext.innerHTML = "Correct!";
+                    correctbutton.style.background = "green";
+                    correctbutton.style.color = "white";
+                });
+
+                checkanswerbutton.addEventListener("click",function(){
+                    if(textanswer.value=="Daniel Craig"){
+                        //console.log("correct text");
+                        freeresponsetext.innerHTML = "Correct!";
+                        freeresponseanswer.style.backgroundColor = "green";
+                        freeresponseanswer.style.color = "white";
+                    }else{
+                        //console.log("incorrect text");
+                        freeresponsetext.innerHTML = "Incorrect";
+                        freeresponseanswer.style.backgroundColor = "red";
+                        freeresponseanswer.style.color = "white";
+                    }
+                });
+
+            }
+            document.addEventListener("DOMContentLoaded", checkanswer);
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Choose the real identity of Iron Man.</h3>
+                <p id="multiplechoicetext" onclick="checkanswer"></p>
+                <button class="incorrect" onclick="checkanswer">Steve Rogers</button>
+                <button class="correct" onclick="checkanswer">Anthony Stark</button>
+                <button class="incorrect" onclick="checkanswer">Thor Odinson</button>
+                <button class="incorrect" onclick="checkanswer">Hank Pym</button>
+                <button class="incorrect" onclick="checkanswer">Clint Barton</button>
+                <button class="incorrect" onclick="checkanswer">Bruce Banner</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Who was the sixth actor to play James Bond?</h3>
+                <p id="freeresponsetext"></p>
+                <input id="freeresponseanswer" type=text>
+                <button id="checkbutton" onclick="checkanswer">Check Answer</button>
+            </div>
+
+        </div>
+    </body>
+</html>

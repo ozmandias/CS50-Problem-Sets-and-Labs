@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The running time of ./sort1 random10000.txt is 0.475 seconds while the running time of ./sort1 sorted10000.txt is 0.029 seconds so that sort1 program has the notation of Big O of n square and Omega of n.
+
+sort2 uses: Merge Sort
+
+How do you know?: The running times of both ./sort2 random10000.txt and ./sort2 sorted10000.txt are 0.075 seconds and sort2 program is the fastest among the three sort programs so that sort2 has the notation of Big O of n log n and Omega of n log n.
+
+sort3 uses: Selection Sort
+
+How do you know?: The running times of both ./sort3 random10000.txt and ./sort3 sorted10000.txt are 0.290 seconds and sort3 program is the slowest among the three sort programs so that sort3 has the notation of Big O of n square and Omega of n square.
