@@ -1,0 +1,18 @@
+ask user for height between 1 to 8 - if user gives height less than 1 or greater than 8, ask again.
+
+build left aligned pyramid first.
+for every row,step,
+print hashes(#)
+print new line(\n)
+
+add dots to the pyramid to make it right aligned.
+for every row,step,
+print dots(.)
+print hashes(#)
+print new line(\n)
+
+after right aligning the pyramid, remove dots and add spaces to the pyramid.
+for every row,step,
+print space(s)([-])
+print hashes(#)
+print new line(\n)
