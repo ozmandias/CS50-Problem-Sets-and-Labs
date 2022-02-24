@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="form-group">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Share</th>
+                    <th>Price</th>
+                    <th>Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stockhistory in historytable %}
+                    <tr>
+                        <td>{{stockhistory.symbol}}</td>
+                        <td>{{stockhistory.quantity}}</td>
+                        <td>{{stockhistory.price}}</td>
+                        <td>{{stockhistory.date}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

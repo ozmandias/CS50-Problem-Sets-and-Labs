@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="form-group">
+    {% if buymessage=="success" %}
+        <div class="alert alert-primary" role="alert">
+            Bought.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% elif salemessage=="success" %}
+        <div class="alert alert-primary" role="alert">
+            Sold.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% elif changepasswordmessage=="success" %}
+        <div class="alert alert-primary" role="alert">
+            Password Changed.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for portfoliostock in portfoliotable %}
+            <tr>
+                <td>{{portfoliostock.symbol}}</td>
+                <td>{{portfoliostock.name}}</td>
+                <td>{{portfoliostock.quantity}}</td>
+                <td>{{"%.2f"|format(portfoliostock.price)}}</td>
+                <td>{{"%.2f"|format(portfoliostock.total)}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="table">
+        <tr>
+            <th>Cash</th>
+            <td>{{"%.2f"|format(portfoliotable[0].cash)}}</td>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            <th>Total</th>
+            <td>{{"%.2f"|format(portfoliototal)}}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

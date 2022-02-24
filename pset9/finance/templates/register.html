@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        {% if not message=="" %}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% else %}
+            <div>
+                {{message}}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <input name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input name="confirmation" placeholder="ConfirmPassword" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    PortfolioBlank
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+    </table>
+    <table class="table">
+        <tr>
+            <th>Cash</th>
+            <td>{{cashmessage}}</td>
+        </tr>
+    </table>
+{% endblock %}

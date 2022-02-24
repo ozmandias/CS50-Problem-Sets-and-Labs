@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select class="alert alert-light dropdown-toggle" name="symbol">
+                <option disabled selected value="">Symbol</option>
+                {% for availablesellsymbol in availablesellsymbols %}
+                    <option value="{{availablesellsymbol}}">{{availablesellsymbol}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div clas=="form-group">
+            <input min="0" name="shares" placeholder="Shares" type="number">
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
