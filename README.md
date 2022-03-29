@@ -47,6 +47,7 @@ This repository contains the solutions to CS50 Problem Sets and Labs of 2021.
 **Problem Set 9**
    - Finance
 
+## Labs
 **Lab 1**
    - Population
 
